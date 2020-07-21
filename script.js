@@ -17,7 +17,7 @@ deposit.addEventListener('click', function(){
    updateSpanText("currentBalence", depositToNumber);
   document.getElementById("deposit-Ammount").value = "";
 });
-
+//create a function for all spanText.
 function updateSpanText(YourSpanId, depositToNumber){
 
     let currentBalence = document.getElementById(YourSpanId).innerText;
@@ -27,3 +27,21 @@ function updateSpanText(YourSpanId, depositToNumber){
 }
 //Deposit Button even handler Finish.
 
+//withdraw Button even handler Start.
+let withdraw = document.getElementById("addWithdraw");
+withdraw.addEventListener("click", function(){
+    let widrawAmount = document.getElementById("widrawAmount").value;
+    let widrawAmountToNumber = parseFloat(widrawAmount);
+    let currentWidraw = document.getElementById("currentWidraw").innerText;
+    let currentWidrawToNumber = parseFloat(currentWidraw);
+    let totalWidraw = widrawAmountToNumber + currentWidrawToNumber;
+    document.getElementById("currentWidraw").innerText = totalWidraw;
+ 
+
+    let currentBalenceForWidraw = document.getElementById("currentBalence").innerText;
+    let currentBalenceWidrawToNumber = parseFloat(currentBalenceForWidraw);
+    let totalWidrawFromCurrentBalence = currentBalenceWidrawToNumber - widrawAmountToNumber;
+    document.getElementById("currentBalence").innerText = totalWidrawFromCurrentBalence;
+
+    document.getElementById("widrawAmount").value = "";
+})
