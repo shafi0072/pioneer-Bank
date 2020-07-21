@@ -45,3 +45,4 @@ withdraw.addEventListener("click", function(){
 
     document.getElementById("widrawAmount").value = "";
 })
+//withdraw Button even handler Finish.
